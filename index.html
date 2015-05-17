@@ -18,25 +18,28 @@
         <!--<script src="cordova.js"></script>-->
 
         <script>
-			window.fbAsyncInit = function() {
-			FB.init({
-			appId      : '1393971370931233',
-			xfbml      : true,
-			version    : 'v2.3',
-			status: true, // check login status
-            cookie: true // enable cookies to allow the server to access the session
-			});
-			};
-
-			(function(d, s, id){
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) {return;}
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js";
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
             // Facebbok OAuth init
-            
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '1394038964257807', // Replace the App ID with yours
+                    status: true, // check login status
+                    cookie: true, // enable cookies to allow the server to access the session
+                    xfbml: true  // parse XFBML
+                });
+            };
+
+            // Load the SDK asynchronously
+            (function (d) {
+                var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement('script');
+                js.id = id;
+                js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                ref.parentNode.insertBefore(js, ref);
+            }(document));
             // Facebbok OAuth init - END
             
             
